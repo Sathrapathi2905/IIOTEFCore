@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Mvc.Domain.Entities.Staff>
+
+@{
+    ViewData["Title"] = "All Staff Members";
+}
+
+<h2>All Staff Members</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var staff in Model)
+        {
+            <tr>
+                <td>@staff.Name</td>
+                <td>@staff.Department</td>
+                <td>@staff.Email</td>
+                <td>@staff.Phone</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Back to Home</a>
